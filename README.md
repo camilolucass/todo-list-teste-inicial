@@ -1,49 +1,61 @@
 # Lista de Tarefas
 
-Aplicacao web simples para cadastro e organizacao de tarefas, desenvolvida para o Teste Inicial de Programacao.
+Aplicação web de lista de tarefas desenvolvida para o Teste Inicial de Programação.
 
 ## Funcionalidades
 
-- Adicionar tarefa com titulo, descricao, data prevista e status.
-- Listar todas as tarefas cadastradas.
+- Adicionar tarefa com título, descrição, data prevista e status.
+- Listar tarefas com busca por título, descrição, data ou status.
 - Editar tarefa existente.
-- Excluir tarefa com confirmacao.
-- Pesquisar tarefas por titulo, descricao, data ou status.
-- Validar titulo obrigatorio.
-- Validar data prevista obrigatoria e valida.
+- Excluir tarefa com confirmação.
+- Filtrar por status.
+- Visualizar tarefas em lista e calendário.
+- Validar título obrigatório.
+- Validar data prevista obrigatória e válida.
 - Persistir os dados no `localStorage` do navegador.
+- Abrir tarefa no Google Calendar por link pré-preenchido.
+- Baixar arquivo `.ics` para importar em Google Calendar, Outlook, Apple Calendar e outros calendários compatíveis.
 
 ## Tecnologias
 
-- HTML5
-- CSS3
-- JavaScript puro
-- `localStorage` para persistencia local
-- Vercel para deploy estatico
+- Next.js
+- React
+- TypeScript
+- CSS
+- Lucide React
+- `localStorage`
+- Vercel
 
 ## Como rodar
 
-Abra o arquivo `index.html` no navegador.
-
-Tambem e possivel servir a pasta com qualquer servidor estatico, por exemplo:
-
 ```bash
-python -m http.server 3000
+npm install
+npm run dev
 ```
 
 Depois acesse `http://localhost:3000`.
+
+## Integração com agenda
+
+A solução implementa integração sem credenciais externas usando:
+
+- Link para Google Calendar com os dados da tarefa preenchidos.
+- Exportação `.ics`, baseada no padrão iCalendar.
+
+Uma integração direta com Google Calendar API ou Microsoft Graph Calendar API também é possível, mas exigiria OAuth, credenciais do provedor e fluxo de autorização do usuário. Para o escopo do teste, a abordagem por link e `.ics` entrega interoperabilidade sem aumentar a complexidade operacional.
 
 ## Estrutura
 
 ```text
 .
-+-- index.html
-+-- styles.css
-+-- app.js
++-- src/app
++-- src/components
++-- src/lib
++-- package.json
 +-- README.md
 +-- RELATO.md
 ```
 
-## Decisoes tecnicas
+## Decisões técnicas
 
-A solucao foi feita sem framework para reduzir dependencias, facilitar a avaliacao do codigo e permitir deploy simples como site estatico. A persistencia em `localStorage` mantem a aplicacao funcional sem necessidade de backend ou banco de dados externo, o que atende ao escopo do teste de forma objetiva.
+A aplicação foi migrada para Next.js e React para deixar a entrega mais próxima de um projeto front-end moderno. A persistência permanece em `localStorage` para manter o teste simples de executar e publicar, sem depender de criação de banco externo ou variáveis de ambiente.
