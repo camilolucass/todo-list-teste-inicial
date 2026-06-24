@@ -26,15 +26,6 @@ Aplicação web de lista de tarefas desenvolvida para o Teste Inicial de Program
 - `localStorage`
 - Vercel
 
-## Como rodar
-
-```bash
-npm install
-npm run dev
-```
-
-Depois acesse `http://localhost:3000`.
-
 ## Integração com agenda
 
 A solução implementa integração sem credenciais externas usando:
